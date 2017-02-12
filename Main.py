@@ -3,7 +3,7 @@ import wget
 import urllib2
 import feedparser
 
-rss_url = 'http://sexy-a-g.tumblr.com/rss'
+rss_url = 'http://google.com/rss'
 feeds = feedparser.parse(rss_url)
 
 def mkdir(path):
