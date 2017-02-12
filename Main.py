@@ -24,6 +24,6 @@ def get_download_url(url):
 mkdir(rss_url[7:-4])
 for post in feeds.entries:
     print(post.title + ": " + post.link)
-    wget.download(get_download_url("https://wordpressbak-1094.appspot.com/fetch.php?url="+post.link),rss_url[7:-4])
+    wget.download(get_download_url("https://aaa.appspot.com/fetch.php?url="+post.link),rss_url[7:-4])
 
 
