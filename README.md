@@ -1,2 +1,8 @@
 # tumblr2onedriver
-Still on developing
+Still in developing.
+
+```
+pip install feedparser
+pip install wget
+
+```
