@@ -5,6 +5,7 @@ import wget
 import feedparser
 import sqlite3
 import time
+
 RssUrlList = ['http://postitforward.tumblr.com/rss','http://for-war3-blog-blog.tumblr.com/rss']
 
 sleep=3600/len(RssUrlList)
@@ -49,7 +50,7 @@ def DownloadVideo(rss_url):
             list(conn.execute("SELECT * FROM %s WHERE ADDRESS == '%s'"%(table,video_id)).next())
         except:
             print(post.title + ": " + post.link + post.published+"\n")
-            wget.download(get_download_url("http://vt.tumblr.com/"+video_id+".mp4"),rss_url[7:-4])
+            wget.download("http://vt.tumblr.com/"+video_id+".mp4",rss_url[7:-4])
             print("\n")
             conn.execute("INSERT INTO %s (BLOG ,ADDRESS, DATE) VALUES ('%s','%s','%f')" % (table,rss_url,video_id,time.mktime(time.strptime(post.published[:-6],"%a, %d %b %Y %H:%M:%S"))))
             #wget.download(get_download_url("https://your.appspot.com/fetch.php?url="+post.link),rss_url[7:-4])
