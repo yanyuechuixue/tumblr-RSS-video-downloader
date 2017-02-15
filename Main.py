@@ -2,7 +2,6 @@
 
 import feedparser
 import wget
-import feedparser
 import sqlite3
 import time
 
@@ -29,7 +28,7 @@ def DownloadVideo(rss_url):
         conn.execute("INSERT INTO %s (BLOG ,ADDRESS, DATE) VALUES ('%s','new','0')" % (table,rss_url))
     #    conn.execute("SELECT * FROM TUMBLR WHERE BLOG == %s").next()
     except:
-        print("all ready exist.")
+        pass
     #    conn.execute('''CREATE TABLE(BLOG TEXT, ADDRESS TEXT PRIMARY KEY, DATE TEXT);''')
     #    conn.execute("INSERT INTO %s (BLOG ,ADDRESS, DATE) VALUES ('rss_url','TEST','TEST')" % table)
     
